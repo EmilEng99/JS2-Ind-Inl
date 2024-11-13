@@ -9,7 +9,7 @@ const DisplayMovies = ({ changeMovieOption }) => {
   useEffect(() => {
     const fetchMovies = async () => {
 
-      const response = await fetch('/movies.json');
+      const response = await fetch('/individuell-inlamning-react/movies.json');
       
       if (response.ok) {
         const movies = await response.json();
