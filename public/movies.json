@@ -1,0 +1,26 @@
+[
+    { 
+      "titel": "Den vilda roboten", 
+      "pris": 145 
+    },
+    { 
+      "titel": "Venom: The Last Dance", 
+      "pris": 130 
+    },
+    { 
+      "titel": "Terrifier 3", 
+      "pris": 95 
+    },
+    { 
+      "titel": "Joker: Folie À Deux", 
+      "pris": 125 
+    },
+    { 
+      "titel": "Insidan ut 2", 
+      "pris": 70 
+    },
+    { 
+      "titel": "Deadpool & Wolverine", 
+      "pris": 100 
+    }
+  ]

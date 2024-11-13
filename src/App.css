@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #242333;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.movie-container {
+  margin: 20px 0;
+}
+
+.movie-container select {
+  background-color: #fff;
+  border: 0;
+  border-radius: 5px;
+  font-size: 14px;
+  font-family: inherit;
+  margin-left: 10px;
+  padding: 5px 15px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.container {
+  perspective: 1000px;
+  margin-bottom: 30px;
+}
+
+.seat {
+  background-color: #444451;
+  height: 12px;
+  width: 15px;
+  margin: 3px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.seat.selected {
+  background-color: #6feaf6;
+}
+
+.seat.occupied {
+  background-color: #fff;
+}
+
+.seat:nth-of-type(2) {
+  margin-right: 18px;
+}
+
+.seat:nth-last-of-type(2) {
+  margin-left: 18px;
+}
+
+.seat:not(.occupied):hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.showcase .seat:not(.occupied):hover {
+  cursor: default;
+  transform: scale(1);
+}
+
+.showcase {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #777;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.showcase li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+
+.showcase li small {
+  margin-left: 2px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  scale: 1.2;
+}
+
+.screen {
+  background-color: #fff;
+  height: 70px;
+  width: 95%;
+  margin: 15px;
+  transform: rotateX(-45deg);
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+}
+
+p.text {
+  width: 100%;
+}
+
+p.text span {
+  color: #6feaf6;
+}
+
+.booking-button {
+  position: absolute;
+  margin-left:5.5em;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: medium;
+  cursor: pointer;
+}
+
+.booking-button:hover {
+  text-decoration: underline;
+  box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.5); 
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 50px;
+  position: relative;
+  z-index: 1;
+  clip-path: polygon(
+    0% 5%, 2.5% 0%, 5% 5%, 7.5% 0%, 10% 5%, 12.5% 0%, 
+    15% 5%, 17.5% 0%, 20% 5%, 22.5% 0%, 25% 5%, 27.5% 0%, 
+    30% 5%, 32.5% 0%, 35% 5%, 37.5% 0%, 40% 5%, 42.5% 0%, 
+    45% 5%, 47.5% 0%, 50% 5%, 52.5% 0%, 55% 5%, 57.5% 0%, 
+    60% 5%, 62.5% 0%, 65% 5%, 67.5% 0%, 70% 5%, 72.5% 0%, 
+    75% 5%, 77.5% 0%, 80% 5%, 82.5% 0%, 85% 5%, 87.5% 0%, 
+    90% 5%, 92.5% 0%, 95% 5%, 97.5% 0%, 100% 5%, 
+    
+    100% 95%, 97.5% 100%, 95% 95%, 92.5% 100%, 90% 95%, 
+    87.5% 100%, 85% 95%, 82.5% 100%, 80% 95%, 77.5% 100%, 
+    75% 95%, 72.5% 100%, 70% 95%, 67.5% 100%, 65% 95%, 
+    62.5% 100%, 60% 95%, 57.5% 100%, 55% 95%, 52.5% 100%, 
+    50% 95%, 47.5% 100%, 45% 95%, 42.5% 100%, 40% 95%, 
+    37.5% 100%, 35% 95%, 32.5% 100%, 30% 95%, 27.5% 100%, 
+    25% 95%, 22.5% 100%, 20% 95%, 17.5% 100%, 15% 95%, 
+    12.5% 100%, 10% 95%, 7.5% 100%, 5% 95%, 2.5% 100%, 0% 95%
+  );
+}
+
+
+
+.close-button {
+  position: absolute;
+  top: 50px;
+  right: 40px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.form-info {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin-bottom: 2em;
+
+}
+
+.form-info label {
+  margin-bottom: 3px;
+}
+
+.movie-dropdown {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 3px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  color: #333;
+}
