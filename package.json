@@ -1,7 +1,6 @@
 {
   "name": "individuell-inlamning-react",
   "version": "0.1.0",
-  "private": true,
   "homepage": "https://EmilEng99.github.io/JS2-Ind-Inl",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",

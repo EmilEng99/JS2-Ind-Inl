@@ -5,17 +5,19 @@ import MovieDropdown from "./MovieDropdown";
 const DisplayMovies = ({ changeMovieOption }) => {
   const [movies, setMovies] = useState([]);
 
-  //Hämtar filmer från JSON-fil
   useEffect(() => {
     const fetchMovies = async () => {
+      const baseUrl =  "";
 
-      const response = await fetch('./individuell-inlamning-react/movies.json');
-      
-      if (response.ok) {
-        const movies = await response.json();
-        setMovies(movies);
-      } else {
-        console.error("Kunde inte hämta filmer");
+      try {
+        const response = await fetch(`${baseUrl}/movies.json`); 
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const moviesData = await response.json();
+        setMovies(moviesData);
+      } catch (error) {
+        console.error("Error fetching movies:", error);
       }
     };
 
@@ -26,11 +28,11 @@ const DisplayMovies = ({ changeMovieOption }) => {
     <div>
       <MovieDropdown movies={movies} changeMovieOption={changeMovieOption} />
     </div>
-  );
-};
+    );
+  };
+  
+  DisplayMovies.propTypes = {
+    changeMovieOption: PropTypes.func.isRequired,
+  };
 
-DisplayMovies.propTypes = {
-  changeMovieOption: PropTypes.func.isRequired,
-};
-
-export default DisplayMovies;
+  export default DisplayMovies;
