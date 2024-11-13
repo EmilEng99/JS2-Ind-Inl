@@ -41,7 +41,7 @@ SeatLayout.propTypes = {
   seats: PropTypes.array.isRequired,
   clickedSeats: PropTypes.array,
   setClickedSeats: PropTypes.func.isRequired,
-  ticketPrice: PropTypes.number.isRequired, // Ny prop för biljettpriset
+  ticketPrice: PropTypes.number.isRequired, 
 };
 
 export default SeatLayout;
