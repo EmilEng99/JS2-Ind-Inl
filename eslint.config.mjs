@@ -6,7 +6,13 @@ import pluginReact from "eslint-plugin-react";
 export default [
   {
     files: ["**/*.{js,mjs,cjs,jsx}"],
-    languageOptions: { globals: {...globals.browser, ...globals.jest} },
+    languageOptions: {
+      globals: {
+        ...globals.browser,  // Håller browser-relaterade globala variabler
+        ...globals.jest,     // Håller jest-relaterade globala variabler
+        ...globals.node,     // Lägger till Node.js globala variabler som 'process'
+      }
+    },
   },
   pluginJs.configs.recommended,
   {

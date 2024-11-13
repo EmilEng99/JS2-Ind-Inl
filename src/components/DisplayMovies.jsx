@@ -7,10 +7,9 @@ const DisplayMovies = ({ changeMovieOption }) => {
 
   useEffect(() => {
     const fetchMovies = async () => {
-      const baseUrl =  "";
-
+      
       try {
-        const response = await fetch(`${baseUrl}/movies.json`); 
+        const response = await fetch(`https://gist.githubusercontent.com/EmilEng99/de62bc7771123055368a431ceffa3d4a/raw/bcb258b74e56e2c2b3ca2877e8594ab6efd49047/gistfile1.txt`); // Använd `baseUrl` här
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
